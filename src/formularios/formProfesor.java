@@ -1,7 +1,7 @@
 package formularios;
 
-import datos.UsuarioDato;
-import datos.CursoDato;
+import dao.UsuarioDAO;
+import dao.CursoDAO;
 import modelo.Usuario;
 import modelo.Curso;
 import javax.swing.JOptionPane;
