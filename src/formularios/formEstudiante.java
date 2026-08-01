@@ -97,7 +97,7 @@ public class formEstudiante extends javax.swing.JFrame {
         );
 
         botonNotas.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        botonNotas.setText("Mis Notas");
+        botonNotas.setText("Cursos Matriculados");
         botonNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonNotasActionPerformed(evt);
@@ -123,7 +123,6 @@ public class formEstudiante extends javax.swing.JFrame {
         labelPrimeraContrasena.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         labelPrimeraContrasena.setText("Nueva Contraseña");
 
-        textFieldNuevaContrasena.setText("jPasswordField1");
         textFieldNuevaContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldNuevaContrasenaActionPerformed(evt);
@@ -141,7 +140,6 @@ public class formEstudiante extends javax.swing.JFrame {
         labelConfirmeContrasena.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         labelConfirmeContrasena.setText("Confirme Contraseña");
 
-        textFieldContrasenaNueva.setText("jPasswordField1");
         textFieldContrasenaNueva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldContrasenaNuevaActionPerformed(evt);
@@ -189,40 +187,45 @@ public class formEstudiante extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "CURSO", "NOTA", "ESTADO", "PROFESOR"
+                "ID", "MATERIA", "PROFESOR"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         tablaInfoMateria.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout panelNotasLayout = new javax.swing.GroupLayout(panelNotas);
         panelNotas.setLayout(panelNotasLayout);
         panelNotasLayout.setHorizontalGroup(
             panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+            .addGroup(panelNotasLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelNotasLayout.setVerticalGroup(
             panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(panelNotasLayout.createSequentialGroup()
+                .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 64, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelContenedorLayout = new javax.swing.GroupLayout(panelContenedor);
@@ -312,12 +315,12 @@ public class formEstudiante extends javax.swing.JFrame {
 
         // aqui revisa que ningun campo esté vacío
         if (contrasenaVieja.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No ingresaste tu contraseña actual.");
+            JOptionPane.showMessageDialog(this, "Porfavor no dejar espacios vacios");
             return;
         }
 
         if (contrasenaNueva.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No ingresaste tu nueva contraseña.");
+            JOptionPane.showMessageDialog(this, "Porfavor no dejar espacios vacios");
             return;
         }
 
