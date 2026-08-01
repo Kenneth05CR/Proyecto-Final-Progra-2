@@ -29,8 +29,6 @@ public class formEstudiante extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    // CORREGIDO: initComponents() ahora está al nivel de la clase, no dentro del constructor.
-    // Antes estaba anidada dentro del constructor con parámetro, lo que causaba un error de compilación.
     private void initComponents() {
 
         panelnfo = new javax.swing.JPanel();
@@ -41,15 +39,15 @@ public class formEstudiante extends javax.swing.JFrame {
         botonCambiarContrasena = new javax.swing.JButton();
         botonFinalSesion = new javax.swing.JButton();
         panelContenedor = new javax.swing.JPanel();
+        panelContrasena = new javax.swing.JPanel();
+        labelPrimeraContrasena = new javax.swing.JLabel();
+        textFieldNuevaContrasena = new javax.swing.JPasswordField();
+        botonConfirmarContrasena = new javax.swing.JButton();
+        labelConfirmeContrasena = new javax.swing.JLabel();
+        textFieldContrasenaNueva = new javax.swing.JPasswordField();
         panelNotas = new javax.swing.JPanel();
         tablaInfoMateria = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        panelContrasena = new javax.swing.JPanel();
-        labelPrimeraContrasena = new javax.swing.JLabel();
-        labelNuevaContrasena = new javax.swing.JLabel();
-        textFieldContrasenaActual = new javax.swing.JPasswordField();
-        textFieldContrasenaNueva = new javax.swing.JPasswordField();
-        botonConfirmarContrasena = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,7 +79,7 @@ public class formEstudiante extends javax.swing.JFrame {
                     .addGroup(panelnfoLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(labelRol, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         panelnfoLayout.setVerticalGroup(
             panelnfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,19 +120,86 @@ public class formEstudiante extends javax.swing.JFrame {
             }
         });
 
+        labelPrimeraContrasena.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        labelPrimeraContrasena.setText("Nueva Contraseña");
+
+        textFieldNuevaContrasena.setText("jPasswordField1");
+        textFieldNuevaContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNuevaContrasenaActionPerformed(evt);
+            }
+        });
+
+        botonConfirmarContrasena.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        botonConfirmarContrasena.setText("Confirmar Cambios");
+        botonConfirmarContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConfirmarContrasenaActionPerformed(evt);
+            }
+        });
+
+        labelConfirmeContrasena.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        labelConfirmeContrasena.setText("Confirme Contraseña");
+
+        textFieldContrasenaNueva.setText("jPasswordField1");
+        textFieldContrasenaNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldContrasenaNuevaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelContrasenaLayout = new javax.swing.GroupLayout(panelContrasena);
+        panelContrasena.setLayout(panelContrasenaLayout);
+        panelContrasenaLayout.setHorizontalGroup(
+            panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelContrasenaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textFieldNuevaContrasena, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(textFieldContrasenaNueva))
+                .addContainerGap())
+            .addGroup(panelContrasenaLayout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addComponent(labelPrimeraContrasena)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContrasenaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContrasenaLayout.createSequentialGroup()
+                        .addComponent(labelConfirmeContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(199, 199, 199))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContrasenaLayout.createSequentialGroup()
+                        .addComponent(botonConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144))))
+        );
+        panelContrasenaLayout.setVerticalGroup(
+            panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelContrasenaLayout.createSequentialGroup()
+                .addComponent(labelPrimeraContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(textFieldNuevaContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(labelConfirmeContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textFieldContrasenaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(botonConfirmarContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "CURSO", "ESTADO", "PROFESOR"
+                "ID", "CURSO", "NOTA", "ESTADO", "PROFESOR"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -147,79 +212,17 @@ public class formEstudiante extends javax.swing.JFrame {
         panelNotas.setLayout(panelNotasLayout);
         panelNotasLayout.setHorizontalGroup(
             panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 622, Short.MAX_VALUE)
-            .addGroup(panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
-                    .addContainerGap(21, Short.MAX_VALUE)
-                    .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(19, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         panelNotasLayout.setVerticalGroup(
             panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 294, Short.MAX_VALUE)
-            .addGroup(panelNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(19, Short.MAX_VALUE)))
-        );
-
-        labelPrimeraContrasena.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        labelPrimeraContrasena.setText("Contraseña Actual");
-
-        labelNuevaContrasena.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        labelNuevaContrasena.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelNuevaContrasena.setText("Nueva Contraseña");
-
-        textFieldContrasenaActual.setText("");
-        textFieldContrasenaActual.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldContrasenaActualActionPerformed(evt);
-            }
-        });
-
-        textFieldContrasenaNueva.setText("");
-
-        botonConfirmarContrasena.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        botonConfirmarContrasena.setText("Confirmar Cambios");
-        botonConfirmarContrasena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonConfirmarContrasenaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelContrasenaLayout = new javax.swing.GroupLayout(panelContrasena);
-        panelContrasena.setLayout(panelContrasenaLayout);
-        panelContrasenaLayout.setHorizontalGroup(
-            panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContrasenaLayout.createSequentialGroup()
-                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(botonConfirmarContrasena, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 165, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelContrasenaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelNuevaContrasena)
-                            .addComponent(labelPrimeraContrasena, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldContrasenaActual)
-                    .addComponent(textFieldContrasenaNueva, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        panelContrasenaLayout.setVerticalGroup(
-            panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelContrasenaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPrimeraContrasena)
-                    .addComponent(textFieldContrasenaActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82)
-                .addGroup(panelContrasenaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNuevaContrasena)
-                    .addComponent(textFieldContrasenaNueva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addComponent(botonConfirmarContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNotasLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(tablaInfoMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelContenedorLayout = new javax.swing.GroupLayout(panelContenedor);
@@ -231,9 +234,9 @@ public class formEstudiante extends javax.swing.JFrame {
                 .addComponent(panelNotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelContenedorLayout.createSequentialGroup()
-                    .addGap(3, 3, 3)
+                    .addGap(9, 9, 9)
                     .addComponent(panelContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(3, 3, 3)))
+                    .addGap(9, 9, 9)))
         );
         panelContenedorLayout.setVerticalGroup(
             panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,9 +245,9 @@ public class formEstudiante extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(panelContenedorLayout.createSequentialGroup()
-                    .addContainerGap()
+                    .addGap(3, 3, 3)
                     .addComponent(panelContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addGap(3, 3, 3)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -302,9 +305,9 @@ public class formEstudiante extends javax.swing.JFrame {
         panelContrasena.setVisible(true);
     }//GEN-LAST:event_botonCambiarContrasenaActionPerformed
 
-    private void botonConfirmarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConfirmarContrasenaActionPerforme
+    private void botonConfirmarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
         
-        String contrasenaVieja = new String(textFieldContrasenaActual.getPassword()).trim();
+        String contrasenaVieja = new String(textFieldNuevaContrasena.getPassword()).trim();
         String contrasenaNueva = new String(textFieldContrasenaNueva.getPassword()).trim();
 
         // aqui revisa que ningun campo esté vacío
@@ -331,15 +334,19 @@ public class formEstudiante extends javax.swing.JFrame {
         if (exito) {
             usuarioActual.setPassword(contrasenaNueva);
             JOptionPane.showMessageDialog(this, "Contraseña actualizada correctamente.");
-            textFieldContrasenaActual.setText("");
+            textFieldNuevaContrasena.setText("");
             textFieldContrasenaNueva.setText("");
         } else {
             JOptionPane.showMessageDialog(this, "Error al actualizar la contraseña. Intenta de nuevo.");
         }
-    }//GEN-LAST:event_botonConfirmarContrasenaActionPerformed
+    }                                                        
 
-    private void textFieldContrasenaActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenaActualActionPerformed
-    }//GEN-LAST:event_textFieldContrasenaActualActionPerformed
+    private void textFieldNuevaContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNuevaContrasenaActionPerformed
+    }//GEN-LAST:event_textFieldNuevaContrasenaActionPerformed
+
+    private void textFieldContrasenaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenaNuevaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldContrasenaNuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,9 +386,9 @@ public class formEstudiante extends javax.swing.JFrame {
     private javax.swing.JButton botonFinalSesion;
     private javax.swing.JButton botonNotas;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelConfirmeContrasena;
     private javax.swing.JLabel labelEsdustream;
     private javax.swing.JLabel labelNombre;
-    private javax.swing.JLabel labelNuevaContrasena;
     private javax.swing.JLabel labelPrimeraContrasena;
     private javax.swing.JLabel labelRol;
     private javax.swing.JPanel panelContenedor;
@@ -389,7 +396,7 @@ public class formEstudiante extends javax.swing.JFrame {
     private javax.swing.JPanel panelNotas;
     private javax.swing.JPanel panelnfo;
     private javax.swing.JScrollPane tablaInfoMateria;
-    private javax.swing.JPasswordField textFieldContrasenaActual;
     private javax.swing.JPasswordField textFieldContrasenaNueva;
+    private javax.swing.JPasswordField textFieldNuevaContrasena;
     // End of variables declaration//GEN-END:variables
 }
