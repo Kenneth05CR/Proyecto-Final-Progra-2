@@ -1,7 +1,7 @@
 package formularios;
 
 // Importaciones para que el estudiante pueda ver sus datos y cambiar su clave
-import datos.UsuarioDato;
+import dao.UsuarioDAO;
 import modelo.Usuario;
 import javax.swing.JOptionPane;
 
@@ -28,7 +28,7 @@ public class formEstudiante extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         panelnfo = new javax.swing.JPanel();
@@ -284,9 +284,9 @@ public class formEstudiante extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void botonFinalSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFinalSesionActionPerformed
+    private void botonFinalSesionActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // cerrar sesion
         int opcion = JOptionPane.showConfirmDialog(this, "¿Deseas salir del programa?", "", JOptionPane.YES_NO_OPTION);
 
@@ -296,17 +296,17 @@ public class formEstudiante extends javax.swing.JFrame {
             login.setLocationRelativeTo(null);
             this.dispose();
         }
-    }//GEN-LAST:event_botonFinalSesionActionPerformed
+    }                                                
 
-    private void botonNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNotasActionPerformed
+    private void botonNotasActionPerformed(java.awt.event.ActionEvent evt) {                                           
         panelNotas.setVisible(true);
         panelContrasena.setVisible(false);
-    }//GEN-LAST:event_botonNotasActionPerformed
+    }                                          
 
-    private void botonCambiarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarContrasenaActionPerformed
+    private void botonCambiarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {                                                       
         panelNotas.setVisible(false);
         panelContrasena.setVisible(true);
-    }//GEN-LAST:event_botonCambiarContrasenaActionPerformed
+    }                                                      
 
     private void botonConfirmarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {                                                        
         
@@ -331,7 +331,7 @@ public class formEstudiante extends javax.swing.JFrame {
 
 
         // Antes esta parte nunca se ejecutaba; el botón validaba pero no guardaba nada.
-        UsuarioDato estudiante = new UsuarioDato();
+        UsuarioDAO estudiante = new UsuarioDAO();
         boolean exito = estudiante.actualizarPassword(usuarioActual.getIdUsuario(), contrasenaNueva);
 
         if (exito) {
@@ -344,12 +344,12 @@ public class formEstudiante extends javax.swing.JFrame {
         }
     }                                                        
 
-    private void textFieldNuevaContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNuevaContrasenaActionPerformed
-    }//GEN-LAST:event_textFieldNuevaContrasenaActionPerformed
+    private void textFieldNuevaContrasenaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    }                                                        
 
-    private void textFieldContrasenaNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldContrasenaNuevaActionPerformed
+    private void textFieldContrasenaNuevaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldContrasenaNuevaActionPerformed
+    }                                                        
 
     /**
      * @param args the command line arguments
@@ -383,7 +383,7 @@ public class formEstudiante extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton botonCambiarContrasena;
     private javax.swing.JButton botonConfirmarContrasena;
     private javax.swing.JButton botonFinalSesion;
@@ -401,5 +401,5 @@ public class formEstudiante extends javax.swing.JFrame {
     private javax.swing.JScrollPane tablaInfoMateria;
     private javax.swing.JPasswordField textFieldContrasenaNueva;
     private javax.swing.JPasswordField textFieldNuevaContrasena;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
